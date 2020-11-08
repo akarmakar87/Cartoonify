@@ -16,10 +16,10 @@
 
 <body>
     <div class="container" id="pictures">
-        <span id="header">
+        <div id="header">
             <div class="row">
                 <div class="col-12">
-                    <h1 onclick="showOriginal();">Cartoonify</h1>
+                    <h1>Cartoonify</h1>
                 </div>
             </div>
             <div class="row">
@@ -27,24 +27,27 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
-        </span>
+        </div>
         <div class="row">
             <div class="col-6">
-                <input type='file' onchange="showOriginal(this);" />
+                <input type='file' onchange="showOriginal(this);"/>
                 <br>
                 <div id="origFrame" class="frame">
-                    <img id="uploadedPic" src="#" alt="Uploaded Image" />
+                    <img id="uploadedPic" src="#" alt="Uploaded Image"/>
                 </div>
             </div>
             <div class="col-6">
-                <input type='file' onchange="showOriginal(this);" />
+                <a href="#" class="button" id="downloadCanvas">Download</a>
+                <button type="button" onclick="pixels();">Convert</button>
                 <br>
-                <div id="origFrame" class="frame">
-                    <img id="uploadedPic" src="#" alt="Uploaded Image" />
+                <div id="processedFrame" class="frame">
+                    <canvas id='canvas' width="653"; height="1165" ;>
+                        Your browser does not support the HTML5 canvas tag.
+                    </canvas>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script src="hackTAMs.js"></script>
+    <script src="hackTAMs.js"></script>
 </html>
