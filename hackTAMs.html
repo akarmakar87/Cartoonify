@@ -15,22 +15,36 @@
 </head>
 
 <body>
-    <div id="header">
-        <h1 onclick="showOriginal();">Cartoonify</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
     <div class="container" id="pictures">
+        <span id="header">
+            <div class="row">
+                <div class="col-12">
+                    <h1 onclick="showOriginal();">Cartoonify</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </span>
         <div class="row">
             <div class="col-6">
-                <input id="upload_original" type="file"/><br>
-                <img src="" alt="test">
+                <input type='file' onchange="showOriginal(this);" />
+                <br>
+                <div id="origFrame" class="frame">
+                    <img id="uploadedPic" src="#" alt="Uploaded Image" />
+                </div>
             </div>
             <div class="col-6">
-                NEW
+                <input type='file' onchange="showOriginal(this);" />
+                <br>
+                <div id="origFrame" class="frame">
+                    <img id="uploadedPic" src="#" alt="Uploaded Image" />
+                </div>
             </div>
         </div>
     </div>
-    <canvas id="canvas1" width="300" height="300"></canvas>
 </body>
 <script src="hackTAMs.js"></script>
 </html>

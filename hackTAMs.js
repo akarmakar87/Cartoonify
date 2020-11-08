@@ -14,12 +14,21 @@ for (let i = 0; i < arr.length; i += 4) {
 let imageData = new ImageData(arr, 200);
 ctx.putImageData(imageData, 20, 20);
 
-var origImg;
+var original;
 
-//console.log();
+function showOriginal(input) {
 
-function showOriginal() {
-    origImg = document.getElementById("upload_original").value;
-    alert(origImg);
-//    document.getElementById("upload_original").src = value
+    original = input;
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#uploadedPic')
+                .attr('src', e.target.result)
+                .width(300);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
 }
